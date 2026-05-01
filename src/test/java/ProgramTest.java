@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,7 +54,7 @@ class ProgramTest {
         game.generateMoves(board, moves);
 
         assertEquals(5, moves.size());
-        assertIterableEquals(java.util.List.of(1,3,4,7,8), moves);
+        assertIterableEquals(Arrays.asList(1,3,4,7,8), moves);
     }
 
     @Test
@@ -128,7 +129,7 @@ class ProgramTest {
         try {
             Utility.print(new char[]{'X','O',' ',' ',' ',' ',' ',' ',' '});
             Utility.print(new int[]{1,2,3,4,5,6,7,8,9});
-            ArrayList<Integer> moves = new ArrayList<>(java.util.List.of(0, 4, 8));
+            ArrayList<Integer> moves = new ArrayList<>(Arrays.asList(0, 4, 8));
             Utility.print(moves);
         } finally {
             System.setOut(oldOut);
